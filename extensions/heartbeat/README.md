@@ -13,7 +13,7 @@ To include Heartbeat in the stack, run Docker Compose from the root of the repos
 argument referencing the `heartbeat-compose.yml` file:
 
 ```console
-$ docker-compose -f docker-compose.yml -f extensions/heartbeat/heartbeat-compose.yml up
+$ docker compose -f docker-compose.yml -f extensions/heartbeat/heartbeat-compose.yml up
 ```
 
 ## Configuring Heartbeat
@@ -24,7 +24,7 @@ with the help of the [Configuration reference][heartbeat-config].
 Any change to the Heartbeat configuration requires a restart of the Heartbeat container:
 
 ```console
-$ docker-compose -f docker-compose.yml -f extensions/heartbeat/heartbeat-compose.yml restart heartbeat
+$ docker compose -f docker-compose.yml -f extensions/heartbeat/heartbeat-compose.yml restart heartbeat
 ```
 
 Please refer to the following documentation page for more details about how to configure Heartbeat inside a
@@ -34,8 +34,8 @@ Docker container: [Run Heartbeat on Docker][heartbeat-docker].
 
 [Heartbeat documentation][heartbeat-doc]
 
-[heartbeat-config]: https://www.elastic.co/guide/en/beats/heartbeat/current/heartbeat-reference-yml.html
-[heartbeat-docker]: https://www.elastic.co/guide/en/beats/heartbeat/current/running-on-docker.html
-[heartbeat-doc]: https://www.elastic.co/guide/en/beats/heartbeat/current/index.html
+[heartbeat-config]: https://www.elastic.co/docs/reference/beats/heartbeat/heartbeat-reference-yml
+[heartbeat-docker]: https://www.elastic.co/docs/reference/beats/heartbeat/running-on-docker
+[heartbeat-doc]: https://www.elastic.co/docs/reference/beats/heartbeat
 
 [setup]: ../../README.md#how-to-re-execute-the-setup

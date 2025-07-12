@@ -8,7 +8,7 @@ on:
     branches:
       - update/main
       - update/tls
-      - update/release-7.x
+      - update/release-8.x
 
 jobs:
 
@@ -19,11 +19,11 @@ jobs:
 
     steps:
       - name: Impersonate update bot
-        uses: tibdex/github-app-token@v2
+        uses: actions/create-github-app-token@v2
         id: generate-token
         with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - name: Approve and merge
         uses: ridedott/merge-me-action@v2

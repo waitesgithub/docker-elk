@@ -14,7 +14,7 @@ To include Metricbeat in the stack, run Docker Compose from the root of the repo
 argument referencing the `metricbeat-compose.yml` file:
 
 ```console
-$ docker-compose -f docker-compose.yml -f extensions/metricbeat/metricbeat-compose.yml up
+$ docker compose -f docker-compose.yml -f extensions/metricbeat/metricbeat-compose.yml up
 ```
 
 ## Configuring Metricbeat
@@ -25,7 +25,7 @@ with the help of the [Configuration reference][metricbeat-config].
 Any change to the Metricbeat configuration requires a restart of the Metricbeat container:
 
 ```console
-$ docker-compose -f docker-compose.yml -f extensions/metricbeat/metricbeat-compose.yml restart metricbeat
+$ docker compose -f docker-compose.yml -f extensions/metricbeat/metricbeat-compose.yml restart metricbeat
 ```
 
 Please refer to the following documentation page for more details about how to configure Metricbeat inside a
@@ -42,8 +42,8 @@ Docker container: [Run Metricbeat on Docker][metricbeat-docker].
 ![host-dashboard](https://user-images.githubusercontent.com/3299086/202710594-0deccf40-3a9a-4e63-8411-2e0d9cc6ad3a.png
 "Host Overview Dashboard")
 
-[metricbeat-config]: https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-reference-yml.html
-[metricbeat-docker]: https://www.elastic.co/guide/en/beats/metricbeat/current/running-on-docker.html
-[metricbeat-doc]: https://www.elastic.co/guide/en/beats/metricbeat/current/index.html
+[metricbeat-config]: https://www.elastic.co/docs/reference/beats/metricbeat/metricbeat-reference-yml
+[metricbeat-docker]: https://www.elastic.co/docs/reference/beats/metricbeat/running-on-docker
+[metricbeat-doc]: https://www.elastic.co/docs/reference/beats/metricbeat
 
 [setup]: ../../README.md#how-to-re-execute-the-setup

@@ -21,7 +21,7 @@ To include Fleet Server in the stack, run Docker Compose from the root of the re
 argument referencing the `fleet-compose.yml` file:
 
 ```console
-$ docker-compose -f docker-compose.yml -f extensions/fleet/fleet-compose.yml up
+$ docker compose -f docker-compose.yml -f extensions/fleet/fleet-compose.yml up
 ```
 
 ## Configuring Fleet Server
@@ -37,11 +37,6 @@ management UI: [Fleet UI Settings][fleet-cfg].
 
 ## Known Issues
 
-- Logs and metrics are only collected within the Fleet Server's container. Ultimately, we want to emulate the behaviour
-  of the existing Metricsbeat and Filebeat extensions, and collect logs and metrics from all ELK containers
-  out-of-the-box. Unfortunately, this kind of use-case isn't (yet) well supported by Fleet, and most advanced
-  configurations currently require running Elastic Agents in [standalone mode][fleet-standalone].
-  (Relevant resource: [Migrate from Beats to Elastic Agent][fleet-beats])
 - The Elastic Agent auto-enrolls using the `elastic` super-user. With this approach, you do not need to generate a
   service token — either using the Fleet management UI or [CLI utility][es-svc-token] — prior to starting this
   extension. However convenient that is, this approach _does not follow security best practices_, and we recommend
@@ -58,12 +53,10 @@ management UI: [Fleet UI Settings][fleet-cfg].
 ![elastic-agent-dashboard](https://user-images.githubusercontent.com/3299086/202701404-958f8d80-a7a0-4044-bbf9-bf73f3bdd17a.png
 "Elastic Agent Dashboard")
 
-[fleet-doc]: https://www.elastic.co/guide/en/fleet/current/fleet-overview.html
-[fleet-pol]: https://www.elastic.co/guide/en/fleet/current/agent-policy.html
-[fleet-cfg]: https://www.elastic.co/guide/en/fleet/current/fleet-settings.html
+[fleet-doc]: https://www.elastic.co/docs/reference/fleet
+[fleet-pol]: https://www.elastic.co/docs/reference/fleet/agent-policy
+[fleet-cfg]: https://www.elastic.co/docs/reference/fleet/fleet-settings
 
 [config-kbn]: ../../kibana/config/kibana.yml
 
-[fleet-standalone]: https://www.elastic.co/guide/en/fleet/current/elastic-agent-configuration.html
-[fleet-beats]: https://www.elastic.co/guide/en/fleet/current/migrate-beats-to-agent.html
-[es-svc-token]: https://www.elastic.co/guide/en/elasticsearch/reference/current/service-tokens-command.html
+[es-svc-token]: https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/service-tokens-command
